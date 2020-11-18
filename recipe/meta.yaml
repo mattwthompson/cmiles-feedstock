@@ -15,6 +15,7 @@ build:
 
 outputs:
   - name: cmiles-base
+    script: build.sh
     requirements:
       host:
         - python
@@ -32,6 +33,7 @@ outputs:
         - python -c "import cmiles; print(cmiles.__version__)"
 
   - name: cmiles
+    script: build.sh
     requirements:
       host:
         - python
@@ -48,8 +50,6 @@ outputs:
       commands:
         - pip check
         - python -c "import cmiles; print(cmiles.__version__)"
-
-
 
 about:
   home: https://github.com/openforcefield/cmiles
