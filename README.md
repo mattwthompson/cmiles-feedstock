@@ -5,11 +5,13 @@ Home: https://github.com/openforcefield/cmiles
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cmiles-feedstock/blob/master/LICENSE.txt)
 
 Summary: Generate canonical molecule identifiers for quantum chemistry
 
+Development: https://github.com/openforcefield/cmiles
 
+Documentation: https://cmiles.readthedocs.io/
 
 Current build status
 ====================
