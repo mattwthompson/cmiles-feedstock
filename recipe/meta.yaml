@@ -13,22 +13,43 @@ build:
   noarch: python
   number: 0
 
-requirements:
-  host:
-    - python
-    - pip
-  run:
-    - python
-    - rdkit
+outputs:
+  - name: cmiles-base
+    requirements:
+      host:
+        - python
+        - pip
+      run:
+        - python
+    test:
+      imports:
+        - cmiles
+      requires:
+        - pip
+        - rdkit
+      commands:
+        - pip check
+        - python -c "import cmiles; print(cmiles.__version__)"
 
-test:
-  imports:
-    - cmiles
-  requires:
-    - pip
-  commands:
-    - pip check
-    - python -c "import cmiles; print(cmiles.__version__)"
+  - name: cmiles
+    requirements:
+      host:
+        - python
+        - pip
+      run:
+        - python
+        - cmiles-base
+        - rdkit
+    test:
+      imports:
+        - cmiles
+      requires:
+        - pip
+      commands:
+        - pip check
+        - python -c "import cmiles; print(cmiles.__version__)"
+
+
 
 about:
   home: https://github.com/openforcefield/cmiles
