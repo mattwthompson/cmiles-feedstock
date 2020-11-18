@@ -10,46 +10,41 @@ source:
   sha256: 3bf76a66361242b66adbecf332071b887143bf82f2ab7a3aabee5e54d7cdad09
 
 build:
-  noarch: python
   number: 1
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 outputs:
   - name: cmiles-base
-    script: python -m pip install . -vv
+    build:
+      script: "{{ PYTHON }} -m pip install . -vv"
+      noarch: python
+
     requirements:
       host:
         - python >=3.6
         - pip
       run:
         - python >=3.6
+
     test:
+      requires:
+        - rdkit
       imports:
         - cmiles
-      requires:
-        - pip
-        - rdkit
-      commands:
-        - pip check
-        - python -c "import cmiles; print(cmiles.__version__)"
-
 
   - name: cmiles
-    script: python -m pip install . -vv
+    build:
+      noarch: python
+
     requirements:
-      host:
-        - python >=3.6
-        - pip
       run:
-        - python >=3.6
-        - cmiles-base
         - rdkit
+        - cmiles-base
+
     test:
       imports:
         - cmiles
-      requires:
-        - pip
       commands:
-        - pip check
         - python -c "import cmiles; print(cmiles.__version__)"
 
 about:
