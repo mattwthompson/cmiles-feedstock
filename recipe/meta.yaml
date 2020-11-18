@@ -1,5 +1,5 @@
 {% set name = "cmiles" %}
-{% set version = "0.1.5" %}
+{% set version = "0.1.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/openforcefield/cmiles/archive/v{{ version }}.tar.gz
-  sha256: 866e1d56ae4f86160fcbeeb782f688a6d4b1f14c88ed23341a74a1b3f2f04bbc
+  sha256: 3bf76a66361242b66adbecf332071b887143bf82f2ab7a3aabee5e54d7cdad09
 
 build:
   noarch: python
@@ -15,13 +15,13 @@ build:
 
 outputs:
   - name: cmiles-base
-    script: build.sh
+    script: python -m pip install . -vv
     requirements:
       host:
-        - python
+        - python >=3.6
         - pip
       run:
-        - python
+        - python >=3.6
     test:
       imports:
         - cmiles
@@ -32,14 +32,15 @@ outputs:
         - pip check
         - python -c "import cmiles; print(cmiles.__version__)"
 
+
   - name: cmiles
-    script: build.sh
+    script: python -m pip install . -vv
     requirements:
       host:
-        - python
+        - python >=3.6
         - pip
       run:
-        - python
+        - python >=3.6
         - cmiles-base
         - rdkit
     test:
