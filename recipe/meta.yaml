@@ -43,8 +43,6 @@ outputs:
     test:
       imports:
         - cmiles
-      commands:
-        - python -c "import cmiles; print(cmiles.__version__)"
 
 about:
   home: https://github.com/openforcefield/cmiles
