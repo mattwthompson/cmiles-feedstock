@@ -11,12 +11,11 @@ source:
 
 build:
   number: 1
-  script: "{{ PYTHON }} -m pip install . -vv"
 
 outputs:
   - name: cmiles-base
     build:
-      script: "{{ PYTHON }} -m pip install . -vv"
+      script: python -m pip install --no-deps .
       noarch: python
 
     requirements:
