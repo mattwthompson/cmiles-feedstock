@@ -36,7 +36,7 @@ outputs:
     requirements:
       run:
         - rdkit
-        - {{ pin_subpackage('cmiles-base'), max_pin="x.x.x"}}
+        - {{ pin_subpackage('cmiles-base', max_pin="x.x.x") }}
 
     test:
       imports:
