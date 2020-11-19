@@ -14,9 +14,7 @@ build:
 
 outputs:
   - name: cmiles-base
-    build:
-      script: "{{ PYTHON }} -m pip install --no-deps . -vv"
-      noarch: python
+    script: build_base.sh
 
     requirements:
       host:
