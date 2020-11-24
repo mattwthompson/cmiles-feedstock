@@ -10,26 +10,37 @@ source:
   sha256: 3bf76a66361242b66adbecf332071b887143bf82f2ab7a3aabee5e54d7cdad09
 
 build:
-  noarch: python
-  number: 0
-  script: python -m pip install . -vv
+  number: 1
 
-requirements:
-  host:
-    - python >=3.6
-    - pip
-  run:
-    - python >=3.6
-    - rdkit
+outputs:
+  - name: cmiles-base
+    script: build_base.sh
 
-test:
-  imports:
-    - cmiles
-  requires:
-    - pip
-  commands:
-    - pip check
-    - python -c "import cmiles; print(cmiles.__version__)"
+    requirements:
+      host:
+        - python >=3.6
+        - pip
+      run:
+        - python >=3.6
+
+    test:
+      requires:
+        - rdkit
+      imports:
+        - cmiles
+
+  - name: cmiles
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        - rdkit
+        - {{ pin_subpackage('cmiles-base', max_pin="x.x.x") }}
+
+    test:
+      imports:
+        - cmiles
 
 about:
   home: https://github.com/openforcefield/cmiles

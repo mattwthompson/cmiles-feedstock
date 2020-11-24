@@ -17,11 +17,44 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table>
+    
+  <tr>
+    <td>Azure</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10458&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cmiles-feedstock?branchName=master">
-      </a>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10458&branchName=master">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cmiles-feedstock?branchName=master">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10458&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cmiles-feedstock?branchName=master&jobName=linux&configuration=linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10458&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cmiles-feedstock?branchName=master&jobName=osx&configuration=osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10458&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cmiles-feedstock?branchName=master&jobName=win&configuration=win_64_" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
     </td>
   </tr>
 </table>
@@ -32,6 +65,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cmiles-green.svg)](https://anaconda.org/conda-forge/cmiles) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cmiles.svg)](https://anaconda.org/conda-forge/cmiles) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cmiles.svg)](https://anaconda.org/conda-forge/cmiles) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cmiles.svg)](https://anaconda.org/conda-forge/cmiles) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-cmiles--base-green.svg)](https://anaconda.org/conda-forge/cmiles-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cmiles-base.svg)](https://anaconda.org/conda-forge/cmiles-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cmiles-base.svg)](https://anaconda.org/conda-forge/cmiles-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cmiles-base.svg)](https://anaconda.org/conda-forge/cmiles-base) |
 
 Installing cmiles
 =================
@@ -42,10 +76,10 @@ Installing `cmiles` from the `conda-forge` channel can be achieved by adding `co
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `cmiles` can be installed with:
+Once the `conda-forge` channel has been enabled, `cmiles, cmiles-base` can be installed with:
 
 ```
-conda install cmiles
+conda install cmiles cmiles-base
 ```
 
 It is possible to list all of the versions of `cmiles` available on your platform with:
