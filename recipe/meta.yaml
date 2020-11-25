@@ -10,11 +10,16 @@ source:
   sha256: 3bf76a66361242b66adbecf332071b887143bf82f2ab7a3aabee5e54d7cdad09
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   - name: cmiles-base
-    script: build_base.sh
+    build:
+      script: python -m pip install --no-deps --ignore-installed .
+      noarch: python
+    # build:
+    # script: build_base.bat  # [win]
+    # script: build_base.sh  # [not win]
 
     requirements:
       host:
